@@ -14,8 +14,6 @@ deploy_on_shinyapps <- function() {
   try(readRenviron(".Renviron"))
   
   urls <- c(
-    "tidyverse/lubridate",
-    "hubert-thieriot/splitr",
     "energyandcleanair/creatrajs",
     "energyandcleanair/leaflet.extras2",
     "energyandcleanair/rcrea")
@@ -28,6 +26,9 @@ deploy_on_shinyapps <- function() {
   rsconnect::setAccountInfo(name=Sys.getenv("SHINYAPP_ACCOUNT"),
                             token=Sys.getenv("SHINYAPP_TOKEN"),
                             secret=Sys.getenv("SHINYAPP_SECRET"))
+  
+  # If facing SSL issue on Mac:
+  # https://support.posit.co/hc/en-us/articles/32801628972311-Resolving-SSL-Certificate-Errors-When-Publishing-to-shinyapps-io-from-RStudio-on-macOS
 
   # We could deploy like this:
   # rsconnect::deployApp(get_app_dir())

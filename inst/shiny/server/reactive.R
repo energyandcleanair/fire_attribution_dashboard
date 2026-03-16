@@ -5,7 +5,7 @@ trajs_date <- reactive({
 
 available <- reactive({
   # w <- db.available_weather()
-  w <- db.available_meas()
+  w <- creadeweather::db.available_meas()
   
   locations <- rcrea::locations(id=w$location_id, with_source = F) %>%
     distinct(id, .keep_all = T)
@@ -75,7 +75,7 @@ weather <- reactive({
     return(NULL)
   }
   
-  w <- db.download_weather(
+  w <- creadeweather::db.download_weather(
     location_id=m$location_id,
     met_type=m$met_type,
     # height=m$height,
@@ -105,7 +105,7 @@ meas <- reactive({
     return(NULL)
   }
   
-  meas <- db.download_meas(
+  meas <- creadeweather::db.download_meas(
     location_id=m$location_id,
     met_type=m$met_type,
     height=NULL,

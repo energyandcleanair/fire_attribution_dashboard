@@ -16,7 +16,6 @@ deploy_on_shinyapps <- function() {
   urls <- c(
     "energyandcleanair/creadeweather",
     "energyandcleanair/creatrajs",
-    "energyandcleanair/leaflet.extras2",
     "energyandcleanair/rcrea")
 
   devtools::install_github(urls, force=F, upgrade="never", auth_token = Sys.getenv("GITHUB_PAT"))

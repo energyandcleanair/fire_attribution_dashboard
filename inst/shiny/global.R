@@ -21,7 +21,8 @@ trajs_gibs_layers <- list(
   "True Color"=c(
     # "MODIS_Terra_CorrectedReflectance_TrueColor",
     # "MODIS_Aqua_CorrectedReflectance_TrueColor",
-    "VIIRS_SNPP_CorrectedReflectance_TrueColor")
+    # Suomi NPP stopped delivering on 2 Nov 2026; NOAA-20 imagery is available from 5 Jan 2018
+    "VIIRS_NOAA20_CorrectedReflectance_TrueColor")
 )
 
 sentinel_url = "https://creodias.sentinel-hub.com/ogc/wms/a6993002-3fe5-45f9-8318-e23b1a5f21b1"

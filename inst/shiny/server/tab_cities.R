@@ -313,7 +313,8 @@ observe({
 
   req(trajs_date())
 
-  wms_layer <- "fires_viirs_snpp"
+  # Suomi NPP stopped delivering on 2 Nov 2026: NOAA-20 fires from 1 Nov 2026, as in creatrajs
+  wms_layer <- ifelse(as.Date(trajs_date()) < as.Date("2026-11-01"), "fires_viirs_snpp", "fires_viirs_noaa20")
   
   # See https://firms.modaps.eosdis.nasa.gov/mapserver/wms-info/#firms-wms
   wms_url <- sprintf("https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/%s/",
